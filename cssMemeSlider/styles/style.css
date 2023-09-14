@@ -3,6 +3,10 @@
     margin: 0 auto;
 }
 
+.slider {
+    position: relative;
+}
+
 .slider__view-window {
     overflow: hidden;
     max-width: 50vw;
@@ -11,11 +15,30 @@
 
 .slider__slides {
     display: flex;
+    width: 400%;
 }
 
 .slider__slides img {
     max-width: 50vw;
 }
+
+/* CONTROLS */
+#lb1:checked~ .slider__view-window .slides {
+    transform: translateX(0);
+}
+
+#lb2:checked~ .slider__view-window .slides {
+    transform: translateX(-100px);
+}
+
+#lb3:checked~ .slider__view-window .slides {
+    transform: translateX(-200px);
+}
+
+#lb4:checked~ .slider__view-window .slides {
+    transform: translateX(-300px);
+}
+/* CONTROLS [END] */
 
 
 /* Mobile */

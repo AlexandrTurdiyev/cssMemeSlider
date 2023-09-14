@@ -5,19 +5,33 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
     <title>cssMemeSlider</title>
 </head>
 <body>
     <section class="slider container">
+        <input class="slider__control-input" type="radio" name="slider-control" id="lb1" checked>
+        <input class="slider__control-input" type="radio" name="slider-control" id="lb2">
+        <input class="slider__control-input" type="radio" name="slider-control" id="lb3">
+        <input class="slider__control-input" type="radio" name="slider-control" id="lb4">
+
+        <div class="slider__control-labels">
+            <label class="slider__control-label" for="lb1"></label>
+            <label class="slider__control-label" for="lb2"></label>
+            <label class="slider__control-label" for="lb3"></label>
+            <label class="slider__control-label" for="lb4"></label>
+        </div>
+
         <div class="slider__view-window">
             <div class="slider__slides">
-                <img src="../images/slides/slide-1_1920x1080.jpg" alt="" class="slider__img">
-                <img src="../images/slides/slide-2_1920x1080.jpg" alt="" class="slider__img">
-                <img src="../images/slides/slide-3_1920x1080.jpg" alt="" class="slider__img">
-                <img src="../images/slides/slide-4_1920x1080.jpg" alt="" class="slider__img">
+                <img src="../images/slides/slide-1_1920x1080.jpg" alt="slide-1-img" class="slider__img">
+                <img src="../images/slides/slide-2_1920x1080.jpg" alt="slide-2-img" class="slider__img">
+                <img src="../images/slides/slide-3_1920x1080.jpg" alt="slide-3-img" class="slider__img">
+                <img src="../images/slides/slide-4_1920x1080.jpg" alt="slide-4-img" class="slider__img">
             </div>
         </div>
     </section>
 </body>
 </html>
+
