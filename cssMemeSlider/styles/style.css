@@ -94,3 +94,18 @@
 /* Extra large screens */
 @media (min-width: 1920px) {}
 
+.slider__slides:has(input[id="lb1"]:checked) .slide-1 {
+    margin-left: -0%; /* смещение до слайда 1 */
+}
+
+.slider__slides:has(input[id="lb2"]:checked) .slide-1 {
+    margin-left: -25%; /* смещение до слайда 2 */
+}
+
+.slider__slides:has(input[id="lb3"]:checked) .slide-1 {
+    margin-left: -50%; /* смещение до слайда 3 */
+}
+
+.slider__slides:has(input[id="lb4"]:checked) .slide-1 {
+    margin-left: -75%; /* смещение до слайда 4 */
+}
