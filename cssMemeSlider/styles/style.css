@@ -1,42 +1,42 @@
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1200px; /* установить максимальную ширину контейнера */
+    margin: 0 auto; /* разместить контейнер по центру страницы */
 }
 
 .slider {
-    position: relative;
+    position: relative; /* включить относительное позиционирование для блока слайдера */
 }
 
 .slider__view-window {
-    overflow: hidden;
-    max-width: 50vw;
-    margin: 0 auto;
+    overflow: hidden; /* скрыть всё, что находится за пределами видового окна */
+    max-width: 50vw; /* установить максимальную ширину окна */
+    margin: 0 auto; /* разместить окно по центру */
 }
 
 .slider__slides {
-    display: flex;
-    width: 400%;
+    display: flex; /* установить правило размещения flex */
+    width: 400%; /* задать ширину блока со слайдами равную количеству слайдов умноженному на 100% */
 }
 
 .slider__slides img {
-    max-width: 50vw;
+    max-width: 50vw; /* установить максимальную ширину изображений */
 }
 
 /* CONTROLS */
 #lb1:checked~ .slider__view-window .slides {
-    transform: translateX(0);
+    transform: translateX(0); /* смещение !не работает! */
 }
 
 #lb2:checked~ .slider__view-window .slides {
-    transform: translateX(-100px);
+    transform: translateX(-100px); /* смещение !не работает! */
 }
 
 #lb3:checked~ .slider__view-window .slides {
-    transform: translateX(-200px);
+    transform: translateX(-200px); /* смещение !не работает! */
 }
 
 #lb4:checked~ .slider__view-window .slides {
-    transform: translateX(-300px);
+    transform: translateX(-300px); /* смещение !не работает! */
 }
 /* CONTROLS [END] */
 
