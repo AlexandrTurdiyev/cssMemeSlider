@@ -4,11 +4,13 @@
 }
 
 .slider {
+    background-color: #25282A;
     position: relative; /* включить относительное позиционирование для блока слайдера */
+    padding-top: 1%;
 }
 
 .slider__inner {
-    background-color: aqua;
+    background-color: #25282A;
     position: relative; /* включить относительное позиционирование для блока */
     width: 95%; /* задать ширину блока */
     height: 10%;
@@ -19,8 +21,9 @@
 .slider__slides {
     display: flex; /* установить правило размещения flex */
     width: 400%; /* задать ширину блока со слайдами равную количеству слайдов умноженному на 100% */
+    height: 100%;
 }
-.slider__slides input {
+.slider input {
     position: absolute; /* включить абсолютное позиционирование, выведя стандартные инпуты из потока */
     visibility: hidden; /* скрыть стандартные инпуты */
 }
@@ -31,10 +34,20 @@
 }
 .slider__slide img {
     width: 100%; /* установить ширину изображений слайдера */
-    height: 100%; /* установить высоту изображений слайдера */
+    border-radius: 2%;
+    /* height: 100%; /* установить высоту изображений слайдера */
 }
+
+.slider__text {
+    color: #FFFFFF;
+    font-size: 30px;
+}
+
+.slider__control-wrapper {
+
+}
+
 .slider__control-labels {
-    position: absolute;
     bottom: 6%; /* прижать блок к нижнему краю, отступив указанное количество единиц в противоположную сторону */
     right: 0; /* сдвинуть блок относительно левой стороны */
     display: flex; /*  */
@@ -55,31 +68,31 @@
 }
 
 /* CONTROLS */
-.slider__slides:has(input[id="lb1"]:checked) .slide-1 {
+.slider:has(input[id="lb1"]:checked) .slide-1 {
     margin-left: -0%; /* смещение до слайда 1 */
 }
-.slider__slides:has(input[id="lb1"]:checked) .label1 {
+.slider:has(input[id="lb1"]:checked) .label1 {
     background-color: transparent /* прозрачный фон для выделенной точки */
 }
 
-.slider__slides:has(input[id="lb2"]:checked) .slide-1 {
+.slider:has(input[id="lb2"]:checked) .slide-1 {
     margin-left: -25%; /* смещение до слайда 2 */
 }
-.slider__slides:has(input[id="lb2"]:checked) .label2 {
+.slider:has(input[id="lb2"]:checked) .label2 {
     background-color: transparent /* прозрачный фон для выделенной точки */
 }
 
-.slider__slides:has(input[id="lb3"]:checked) .slide-1 {
+.slider:has(input[id="lb3"]:checked) .slide-1 {
     margin-left: -50%; /* смещение до слайда 3 */
 }
-.slider__slides:has(input[id="lb3"]:checked) .label3 {
+.slider:has(input[id="lb3"]:checked) .label3 {
     background-color: transparent /* прозрачный фон для выделенной точки */
 }
 
-.slider__slides:has(input[id="lb4"]:checked) .slide-1 {
+.slider:has(input[id="lb4"]:checked) .slide-1 {
     margin-left: -75%; /* смещение до слайда 4 */
 }
-.slider__slides:has(input[id="lb4"]:checked) .label4 {
+.slider__inner:has(input[id="lb4"]:checked) .label4 {
     background-color: transparent /* прозрачный фон для выделенной точки */
 }
 /* CONTROLS [END] */
