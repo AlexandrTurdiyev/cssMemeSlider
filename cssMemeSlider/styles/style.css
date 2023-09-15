@@ -41,9 +41,10 @@
     justify-content: flex-end;
 }
 .slider__control-label {
-    height: 8px; /* задать высоту элемента */
-    width: 8px; /* задать ширину элемента */
+    height: 16px; /* задать высоту элемента */
+    width: 16px; /* задать ширину элемента */
     margin: 6px; /* задать отступы элементу */
+    border: 1px solid #75ABFA; /* бордер */
     cursor: pointer; /* изменить курсор мыши при наведении на элемент */
     background-color: #75ABFA; /* установить фон элемента */
     border-radius: 50%; /* сделать круг */
@@ -54,24 +55,32 @@
 }
 
 /* CONTROLS */
-#lb1:checked~ .slide-1 {
-    margin-left: 0; /* смещение 0 */
+.slider__slides:has(input[id="lb1"]:checked) .slide-1 {
+    margin-left: -0%; /* смещение до слайда 1 */
+}
+.slider__slides:has(input[id="lb1"]:checked) .label1 {
+    background-color: transparent /* прозрачный фон для выделенной точки */
 }
 
-.slider__control-label:enabled {
-    background-color: black;
-}
-
-#lb2:checked~ .slide-1 {
+.slider__slides:has(input[id="lb2"]:checked) .slide-1 {
     margin-left: -25%; /* смещение до слайда 2 */
 }
-
-#lb3:checked~ .slide-1 {
-    margin-left: -50%; /* смещение до слайда 3 */
+.slider__slides:has(input[id="lb2"]:checked) .label2 {
+    background-color: transparent /* прозрачный фон для выделенной точки */
 }
 
-#lb4:checked~ .slide-1 {
+.slider__slides:has(input[id="lb3"]:checked) .slide-1 {
+    margin-left: -50%; /* смещение до слайда 3 */
+}
+.slider__slides:has(input[id="lb3"]:checked) .label3 {
+    background-color: transparent /* прозрачный фон для выделенной точки */
+}
+
+.slider__slides:has(input[id="lb4"]:checked) .slide-1 {
     margin-left: -75%; /* смещение до слайда 4 */
+}
+.slider__slides:has(input[id="lb4"]:checked) .label4 {
+    background-color: transparent /* прозрачный фон для выделенной точки */
 }
 /* CONTROLS [END] */
 
@@ -94,18 +103,3 @@
 /* Extra large screens */
 @media (min-width: 1920px) {}
 
-.slider__slides:has(input[id="lb1"]:checked) .slide-1 {
-    margin-left: -0%; /* смещение до слайда 1 */
-}
-
-.slider__slides:has(input[id="lb2"]:checked) .slide-1 {
-    margin-left: -25%; /* смещение до слайда 2 */
-}
-
-.slider__slides:has(input[id="lb3"]:checked) .slide-1 {
-    margin-left: -50%; /* смещение до слайда 3 */
-}
-
-.slider__slides:has(input[id="lb4"]:checked) .slide-1 {
-    margin-left: -75%; /* смещение до слайда 4 */
-}
