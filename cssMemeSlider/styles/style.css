@@ -44,10 +44,11 @@
 }
 
 .slider__control-wrapper {
+    background-color: #25282A;
     position: absolute;
     bottom: 4vh;
     right: 2%;
-    width: 90%;
+    width: 50%;
 }
 
 .slider__control-labels {
