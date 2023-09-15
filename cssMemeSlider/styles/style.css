@@ -44,7 +44,10 @@
 }
 
 .slider__control-wrapper {
-
+    position: absolute;
+    bottom: 4vh;
+    right: 2%;
+    width: 90%;
 }
 
 .slider__control-labels {
@@ -92,7 +95,7 @@
 .slider:has(input[id="lb4"]:checked) .slide-1 {
     margin-left: -75%; /* смещение до слайда 4 */
 }
-.slider__inner:has(input[id="lb4"]:checked) .label4 {
+.slider:has(input[id="lb4"]:checked) .label4 {
     background-color: transparent /* прозрачный фон для выделенной точки */
 }
 /* CONTROLS [END] */
