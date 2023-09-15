@@ -11,41 +11,67 @@
     background-color: aqua;
     position: relative; /* включить относительное позиционирование для блока */
     width: 95%; /* задать ширину блока */
+    height: 10%;
     margin: 2% auto 0 auto; /* задать отступ сверху и разместить блок по центру, по горизонтали */
     overflow: hidden;
 
 }
-
-.slider__view-window {
-    overflow: hidden; /* скрыть всё, что находится за пределами видового окна */
-    max-width: 50vw; /* установить максимальную ширину окна */
-    margin: 0 auto; /* разместить окно по центру */
-}
-
 .slider__slides {
     display: flex; /* установить правило размещения flex */
     width: 400%; /* задать ширину блока со слайдами равную количеству слайдов умноженному на 100% */
 }
-
-.slider__slides img {
-    max-width: 50vw; /* установить максимальную ширину изображений */
+.slider__slides input {
+    position: absolute; /* включить абсолютное позиционирование, выведя стандартные инпуты из потока */
+    visibility: hidden; /* скрыть стандартные инпуты */
+}
+.slider__slide {
+    width: 25%; /* установить ширину каждого блока слайдов относительно общей ширины всех слайдов.
+        В данном случае слайдов 4 шт., общая ширина блока со слайдами считается за 100%, 100% / 4 шт. = 25% */
+    transition: all .6s ease; /* установить время и тип перехода для анимации переключения слайдов */
+}
+.slider__slide img {
+    width: 100%; /* установить ширину изображений слайдера */
+    height: 100%; /* установить высоту изображений слайдера */
+}
+.slider__control-labels {
+    position: absolute;
+    bottom: 6%; /* прижать блок к нижнему краю, отступив указанное количество единиц в противоположную сторону */
+    right: 0; /* сдвинуть блок относительно левой стороны */
+    display: flex; /*  */
+    justify-content: flex-end;
+}
+.slider__control-label {
+    height: 8px; /* задать высоту элемента */
+    width: 8px; /* задать ширину элемента */
+    margin: 6px; /* задать отступы элементу */
+    cursor: pointer; /* изменить курсор мыши при наведении на элемент */
+    background-color: #75ABFA; /* установить фон элемента */
+    border-radius: 50%; /* сделать круг */
+    transition: all .4s ease; /* установить время и тип перехода для анимации при наведении курсора на элемент */
+}
+.slider__control-label:hover {
+    background-color: #FFF;
 }
 
 /* CONTROLS */
-#lb1:checked~ .slider__view-window .slides {
-    transform: translateX(0); /* смещение !не работает! */
+#lb1:checked~ .slide-1 {
+    margin-left: 0; /* смещение 0 */
 }
 
-#lb2:checked~ .slider__view-window .slides {
-    transform: translateX(-100px); /* смещение !не работает! */
+.slider__control-label:enabled {
+    background-color: black;
 }
 
-#lb3:checked~ .slider__view-window .slides {
-    transform: translateX(-200px); /* смещение !не работает! */
+#lb2:checked~ .slide-1 {
+    margin-left: -25%; /* смещение до слайда 2 */
 }
 
-#lb4:checked~ .slider__view-window .slides {
-    transform: translateX(-300px); /* смещение !не работает! */
+#lb3:checked~ .slide-1 {
+    margin-left: -50%; /* смещение до слайда 3 */
+}
+
+#lb4:checked~ .slide-1 {
+    margin-left: -75%; /* смещение до слайда 4 */
 }
 /* CONTROLS [END] */
 
@@ -67,3 +93,4 @@
 
 /* Extra large screens */
 @media (min-width: 1920px) {}
+
