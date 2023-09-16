@@ -45,7 +45,7 @@
 
 .slider__text-slider {
     display: flex;
-    width: 50%;
+    width: 80%;
     overflow: hidden;
 }
 
@@ -65,7 +65,7 @@
     right: 0; /* сдвинуть блок относительно левой стороны */
     display: flex; /*  */
     justify-content: flex-end;
-    width: 50%;
+    width: 20%;
 }
 .slider__control-label {
     height: 16px; /* задать высоту элемента */
@@ -151,12 +151,47 @@
 }
 
 
+@media (max-width: 480px) {
+    .slider__text-slider {
+        width: 100%;
+    }
+    .slider__text {
+        font-size: 15px;
+    }
+    .slider__control-labels {
+        width: 100%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 560px) {
+    .slider__text-slider {
+        width: 70%;
+    }
+    .slider__text {
+        font-size: 15px;
+    }
+    .slider__control-labels {
+        width: 30%;
+    }
+}
 
 /* Extra small devices */
-@media (min-width: 481px) and (max-width: 767px) {}
+@media (min-width: 560px) and (max-width: 767px) {
+    .slider__text-slider {
+        width: 70%;
+    }
+    .slider__text {
+        font-size: 20px;
+    }
+    .slider__control-labels {
+        width: 30%;
+    }
+}
 
 /* Small tablets */
-@media (min-width: 768px) and (max-width: 991px) {}
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
 
 /* Large tablets/laptops */
 @media (min-width: 992px) and (max-width: 1199px) {}
