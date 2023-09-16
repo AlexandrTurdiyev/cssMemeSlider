@@ -69,6 +69,7 @@
 }
 .slider__control-label:hover {
     background-color: #FFF;
+    border-color: #FFF;
 }
 
 /* CONTROLS */
@@ -103,7 +104,11 @@
 
 
 /* Mobile */
-@media (max-width: 480px) {}
+@media (max-width: 500px) {
+
+}
+
+
 
 /* Extra small devices */
 @media (min-width: 481px) and (max-width: 767px) {}
