@@ -38,17 +38,27 @@
     /* height: 100%; /* установить высоту изображений слайдера */
 }
 
+.slider__text-controls-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider__text-slider {
+    display: flex;
+    width: 50%;
+    overflow: hidden;
+}
+
+.slider__text-slide {
+    visibility: hidden;
+    position: absolute;
+}
+
 .slider__text {
     color: #FFFFFF;
     font-size: 30px;
-}
-
-.slider__control-wrapper {
-    background-color: #25282A;
-    position: absolute;
-    bottom: 4vh;
-    right: 2%;
-    width: 50%;
+    white-space: nowrap;
 }
 
 .slider__control-labels {
@@ -56,6 +66,7 @@
     right: 0; /* сдвинуть блок относительно левой стороны */
     display: flex; /*  */
     justify-content: flex-end;
+    width: 50%;
 }
 .slider__control-label {
     height: 16px; /* задать высоту элемента */
@@ -76,26 +87,45 @@
 .slider:has(input[id="lb1"]:checked) .slide-1 {
     margin-left: -0%; /* смещение до слайда 1 */
 }
+.slider:has(input[id="lb1"]:checked) .slide-1-txt {
+    position: static;
+    visibility: visible;
+}
 .slider:has(input[id="lb1"]:checked) .label1 {
     background-color: transparent /* прозрачный фон для выделенной точки */
 }
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
 .slider:has(input[id="lb2"]:checked) .slide-1 {
     margin-left: -25%; /* смещение до слайда 2 */
 }
+.slider:has(input[id="lb2"]:checked) .slide-2-txt {
+    position: static;
+    visibility: visible;
+}
 .slider:has(input[id="lb2"]:checked) .label2 {
     background-color: transparent /* прозрачный фон для выделенной точки */
 }
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
 .slider:has(input[id="lb3"]:checked) .slide-1 {
     margin-left: -50%; /* смещение до слайда 3 */
+}
+.slider:has(input[id="lb3"]:checked) .slide-3-txt {
+    position: static;
+    visibility: visible;
 }
 .slider:has(input[id="lb3"]:checked) .label3 {
     background-color: transparent /* прозрачный фон для выделенной точки */
 }
 
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 .slider:has(input[id="lb4"]:checked) .slide-1 {
     margin-left: -75%; /* смещение до слайда 4 */
+}
+.slider:has(input[id="lb4"]:checked) .slide-4-txt {
+    position: static;
+    visibility: visible;
 }
 .slider:has(input[id="lb4"]:checked) .label4 {
     background-color: transparent /* прозрачный фон для выделенной точки */
@@ -125,3 +155,9 @@
 /* Extra large screens */
 @media (min-width: 1920px) {}
 
+
+.controls__test {
+    background-color: aqua;
+    width: 100%;
+    height: 100px;
+}
