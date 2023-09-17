@@ -6,22 +6,20 @@
 .slider {
     background-color: #25282A;
     position: relative; /* включить относительное позиционирование для блока слайдера */
-    padding-top: 1%;
+    padding-top: 1%; /* добавить внутренний отступ сверху (часть фона сверху) */
 }
 
 .slider__inner {
-    background-color: #25282A;
+    background-color: #25282A; /* задать цвет фона */
     position: relative; /* включить относительное позиционирование для блока */
     width: 95%; /* задать ширину блока */
-    height: 10%;
     margin: 2% auto 0 auto; /* задать отступ сверху и разместить блок по центру, по горизонтали */
-    overflow: hidden;
+    overflow: hidden; /* скрыть контент выходящий за рамки блока */
 
 }
 .slider__slides {
     display: flex; /* установить правило размещения flex */
     width: 400%; /* задать ширину блока со слайдами равную количеству слайдов умноженному на 100% */
-    height: 100%;
 }
 .slider input {
     position: absolute; /* включить абсолютное позиционирование, выведя стандартные инпуты из потока */
@@ -34,13 +32,13 @@
 }
 .slider__slide img {
     width: 100%; /* установить ширину изображений слайдера */
-    /* height: 100%; /* установить высоту изображений слайдера */
 }
 
 .slider__text-controls-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* расположить блок с текстом и блок с кнопками в строку */
+    justify-content: space-between; /* расположить блок с текстом и блок с кнопками по разным сторонам */
+    align-items: flex-start; /* выровнить текст и кнопки по верхнему краю блока */
+    padding-top: 20px; /* задать внутренний отступ блоку, для смещения текста и кнопок вниз */
 }
 
 .slider__text-slider {
@@ -58,6 +56,7 @@
     color: #FFFFFF;
     font-size: 30px;
     white-space: nowrap;
+    margin-top: 0;
 }
 
 .slider__control-labels {
@@ -70,7 +69,7 @@
 .slider__control-label {
     height: 16px; /* задать высоту элемента */
     width: 16px; /* задать ширину элемента */
-    margin: 6px; /* задать отступы элементу */
+    margin: 0 6px; /* задать отступы элементу */
     border: 1px solid #75ABFA; /* бордер */
     cursor: pointer; /* изменить курсор мыши при наведении на элемент */
     background-color: #75ABFA; /* установить фон элемента */
@@ -132,37 +131,8 @@
 /* CONTROLS [END] */
 
 
-/* Mobile */
-@media (max-width: 500px) {
-    .slider__text-controls-wrapper {
-        flex-direction: column-reverse;
-    }
-    .slider__control-labels {
-        justify-content: center;
-        margin-top: 10px;
-        width: 100%;
-    }
-    .slider__text-slider {
-        width: 100%;
-    }
-    .slider__text {
-        margin-top: 10px;
-    }
-}
 
-
-@media (max-width: 480px) {
-    .slider__text-slider {
-        width: 100%;
-    }
-    .slider__text {
-        font-size: 15px;
-    }
-    .slider__control-labels {
-        width: 100%;
-    }
-}
-
+/* ADAPTIVE */
 @media (min-width: 481px) and (max-width: 560px) {
     .slider__text-slider {
         width: 70%;
@@ -175,7 +145,35 @@
     }
 }
 
-/* Extra small devices */
+@media (max-width: 500px) {
+    .slider__text-controls-wrapper {
+        flex-direction: column-reverse;
+        padding-top: 0;
+    }
+    .slider__control-labels {
+        justify-content: center;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .slider__text-slider {
+        width: 100%;
+        padding-top: 10px;
+    }
+    .slider__text {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider__text {
+        font-size: 15px;
+    }
+    .slider__control-labels {
+        width: 100%;
+    }
+}
+
 @media (min-width: 560px) and (max-width: 767px) {
     .slider__text-slider {
         width: 70%;
@@ -187,24 +185,4 @@
         width: 30%;
     }
 }
-
-/* Small tablets */
-@media (min-width: 768px) and (max-width: 991px) {
-
-}
-
-/* Large tablets/laptops */
-@media (min-width: 992px) and (max-width: 1199px) {}
-
-/* Desktops */
-@media (min-width: 1200px) and (max-width: 1919px) {}
-
-/* Extra large screens */
-@media (min-width: 1920px) {}
-
-
-.controls__test {
-    background-color: aqua;
-    width: 100%;
-    height: 100px;
-}
+/* ADAPTIVE [END] */
