@@ -1,76 +1,101 @@
+/* Поправил:
+ 1. Единицы измерения изменил на относительные */
+
 .container {
-    max-width: 1200px; /* установить максимальную ширину контейнера */
+    max-width: 70vw; /* установить максимальную ширину контейнера */
     margin: 0 auto; /* разместить контейнер по центру страницы */
 }
 
 .slider {
     background-color: #25282A;
-    position: relative; /* включить относительное позиционирование для блока слайдера */
     padding-top: 1%; /* добавить внутренний отступ сверху (часть фона сверху) */
 }
 
 .slider__inner {
     background-color: #25282A; /* задать цвет фона */
-    position: relative; /* включить относительное позиционирование для блока */
-    width: 95%; /* задать ширину блока */
-    margin: 2% auto 0 auto; /* задать отступ сверху и разместить блок по центру, по горизонтали */
+    width: 68vw; /* задать ширину блока */
+    margin: 1% auto 0 auto; /* задать отступ сверху и разместить блок по центру, по горизонтали */
     overflow: hidden; /* скрыть контент выходящий за рамки блока */
 
 }
 .slider__slides {
     display: flex; /* установить правило размещения flex */
-    width: 400%; /* задать ширину блока со слайдами равную количеству слайдов умноженному на 100% */
+    width: 272vw; /* задать ширину блока со слайдами равную количеству слайдов умноженному на 100% */
+    justify-content: center;
 }
 .slider input {
-    position: absolute; /* включить абсолютное позиционирование, выведя стандартные инпуты из потока */
-    visibility: hidden; /* скрыть стандартные инпуты */
+    cursor: pointer;
+    min-width: 3vw;
+    min-height: 3vw;
+    z-index: 2; /* спрятать инпуты на задний план (дополнительная мера =) */
+    opacity: 0;
 }
+
 .slider__slide {
-    width: 25%; /* установить ширину каждого блока слайдов относительно общей ширины всех слайдов.
+    width: 68vw; /* установить ширину каждого блока слайдов относительно общей ширины всех слайдов.
         В данном случае слайдов 4 шт., общая ширина блока со слайдами считается за 100%, 100% / 4 шт. = 25% */
     transition: all .6s ease; /* установить время и тип перехода для анимации переключения слайдов */
 }
 .slider__slide img {
-    width: 100%; /* установить ширину изображений слайдера */
+    width: 68vw; /* установить ширину изображений слайдера */
 }
 
 .slider__text-controls-wrapper {
     display: flex; /* расположить блок с текстом и блок с кнопками в строку */
     justify-content: space-between; /* расположить блок с текстом и блок с кнопками по разным сторонам */
     align-items: flex-start; /* выровнить текст и кнопки по верхнему краю блока */
-    padding-top: 20px; /* задать внутренний отступ блоку, для смещения текста и кнопок вниз */
+    padding-top: 2%;
 }
 
 .slider__text-slider {
     display: flex;
-    width: 80%;
+    max-width: 80%;
     overflow: hidden;
 }
 
+.slider__text-slides {
+    display: flex;
+    width: 272vw;
+}
+
 .slider__text-slide {
-    visibility: hidden;
-    position: absolute;
+    width: 68vw;
+    transition: all .63s ease; /* установить время и тип перехода для анимации переключения слайдов */
+
 }
 
 .slider__text {
     color: #FFFFFF;
-    font-size: 30px;
+    min-width: 68vw;
+    font-size: clamp(1rem, 2.5vw, 2rem);
     white-space: nowrap;
     margin-top: 0;
 }
 
 .slider__control-labels {
     bottom: 6%; /* прижать блок к нижнему краю, отступив указанное количество единиц в противоположную сторону */
-    right: 0; /* сдвинуть блок относительно левой стороны */
     display: flex; /*  */
     justify-content: flex-end;
     width: 20%;
 }
+
+.slider__label-wrapper {
+    background-color: transparent;
+    width: 3vw;
+    height: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .slider__control-label {
-    height: 16px; /* задать высоту элемента */
-    width: 16px; /* задать ширину элемента */
-    margin: 0 6px; /* задать отступы элементу */
-    border: 1px solid #75ABFA; /* бордер */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 1vw; /* задать высоту элемента */
+    max-width: 1vw; /* задать ширину элемента */
+   /* задать отступы элементу */
+    border: 0.1vw solid #75ABFA; /* бордер */
     cursor: pointer; /* изменить курсор мыши при наведении на элемент */
     background-color: #75ABFA; /* установить фон элемента */
     border-radius: 50%; /* сделать круг */
@@ -79,6 +104,7 @@
 .slider__control-label:hover {
     background-color: #FFF;
     border-color: #FFF;
+    transform: scale(1.2);
 }
 
 /* CONTROLS */
@@ -86,103 +112,138 @@
     margin-left: -0%; /* смещение до слайда 1 */
 }
 .slider:has(input[id="lb1"]:checked) .slide-1-txt {
-    position: static;
-    visibility: visible;
+    margin-left: -0%;
 }
 .slider:has(input[id="lb1"]:checked) .label1 {
-    background-color: transparent /* прозрачный фон для выделенной точки */
+    background-color: transparent; /* прозрачный фон для выделенной точки */
+    transform: scale(1.4);
 }
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
 .slider:has(input[id="lb2"]:checked) .slide-1 {
-    margin-left: -25%; /* смещение до слайда 2 */
+    margin-left: -50%; /* смещение до слайда 2 */
 }
-.slider:has(input[id="lb2"]:checked) .slide-2-txt {
-    position: static;
-    visibility: visible;
+.slider:has(input[id="lb2"]:checked) .slide-1-txt {
+    margin-left: -25%;
+
 }
 .slider:has(input[id="lb2"]:checked) .label2 {
-    background-color: transparent /* прозрачный фон для выделенной точки */
+    background-color: transparent; /* прозрачный фон для выделенной точки */
+    transform: scale(1.4);
 }
+
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
 .slider:has(input[id="lb3"]:checked) .slide-1 {
-    margin-left: -50%; /* смещение до слайда 3 */
+    margin-left: -100%; /* смещение до слайда 3 */
 }
-.slider:has(input[id="lb3"]:checked) .slide-3-txt {
-    position: static;
-    visibility: visible;
+.slider:has(input[id="lb3"]:checked) .slide-1-txt {
+    margin-left: -50%;
 }
 .slider:has(input[id="lb3"]:checked) .label3 {
-    background-color: transparent /* прозрачный фон для выделенной точки */
+    background-color: transparent; /* прозрачный фон для выделенной точки */
+    transform: scale(1.4);
 }
 
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 .slider:has(input[id="lb4"]:checked) .slide-1 {
-    margin-left: -75%; /* смещение до слайда 4 */
+    margin-left: -150%; /* смещение до слайда 4 */
 }
-.slider:has(input[id="lb4"]:checked) .slide-4-txt {
-    position: static;
-    visibility: visible;
+.slider:has(input[id="lb4"]:checked) .slide-1-txt {
+    margin-left: -75%;
 }
 .slider:has(input[id="lb4"]:checked) .label4 {
-    background-color: transparent /* прозрачный фон для выделенной точки */
+    background-color: transparent; /* прозрачный фон для выделенной точки */
+    transform: scale(1.4);
 }
 /* CONTROLS [END] */
 
 
 
 /* ADAPTIVE */
-@media (min-width: 481px) and (max-width: 560px) {
+@media (min-width: 560px) and (max-width: 767px) {
+    .container {
+        max-width: 98vw;
+    }
+    .slider__inner {
+        width: 95vw;
+    }
+    .slider__slides {
+        width: 380vw;
+    }
+    .slider__slide {
+        width: 95vw;
+    }
+    .slider__slide img {
+        width: 95vw;
+    }
     .slider__text-slider {
-        width: 70%;
+        width: 95vw;
+    }
+    .slider__text-slide {
+        width: 95vw;
     }
     .slider__text {
-        font-size: 15px;
-    }
-    .slider__control-labels {
-        width: 30%;
+        min-width: 95vw;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 559px) {
+    .container {
+        max-width: 98vw;
+    }
+    .slider__inner {
+        width: 95vw;
+    }
+    .slider__slides {
+        width: 380vw;
+    }
+    .slider__slide {
+        width: 95vw;
+    }
+    .slider__slide img {
+        width: 95vw;
+    }
+    .slider__text-slider {
+        width: 95vw;
+    }
+    .slider__text-slider {
+        width: 95vw;
+        max-width: 95vw;
+    }
+    .slider__text-slides {
+        width: 380vw;
+    }
+    .slider__text-slide {
+        width: 95vw;
+    }
+    .slider__text {
+        width: 95vw;
+        margin-top: 2%;
+        margin-bottom: 4%;
+    }
+    .slider__control-labels {
+        justify-content: center;
+        margin-top: 2%;
+        width: 100%;
+    }
+    .slider__label-wrapper {
+        width: 5vw;
+    }
+    .slider__control-label {
+        max-height: 2vw;
+        max-width: 2vw;
+        height: 2vw;
+        width: 2vw;
+    }
     .slider__text-controls-wrapper {
         flex-direction: column-reverse;
         padding-top: 0;
     }
-    .slider__control-labels {
-        justify-content: center;
-        margin-top: 10px;
-        width: 100%;
-    }
     .slider__text-slider {
         width: 100%;
-        padding-top: 10px;
-    }
-    .slider__text {
-        margin-top: 0;
-        margin-bottom: 15px;
+
     }
 }
 
-@media (max-width: 480px) {
-    .slider__text {
-        font-size: 15px;
-    }
-    .slider__control-labels {
-        width: 100%;
-    }
-}
-
-@media (min-width: 560px) and (max-width: 767px) {
-    .slider__text-slider {
-        width: 70%;
-    }
-    .slider__text {
-        font-size: 20px;
-    }
-    .slider__control-labels {
-        width: 30%;
-    }
-}
 /* ADAPTIVE [END] */
