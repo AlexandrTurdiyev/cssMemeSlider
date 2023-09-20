@@ -1,0 +1,245 @@
+/* Поправил:
+ 1. Единицы измерения изменил на относительные */
+
+.container {
+    max-width: 70vw; /* установить максимальную ширину контейнера */
+    margin: 0 auto; /* разместить контейнер по центру страницы */
+}
+
+.slider {
+    background-color: #25282A;
+    padding-top: 1%; /* добавить внутренний отступ сверху (часть фона сверху) */
+}
+
+.slider__inner {
+    background-color: #25282A; /* задать цвет фона */
+    width: 68vw; /* задать ширину блока */
+    margin: 1% auto 0 auto; /* задать отступ сверху и разместить блок по центру, по горизонтали */
+    overflow: hidden; /* скрыть контент выходящий за рамки блока */
+
+}
+.slider__slides {
+    display: flex; /* установить правило размещения flex */
+    width: 272vw; /* задать ширину блока со слайдами равную количеству слайдов умноженному на 100% */
+    justify-content: center;
+}
+.slider input {
+    cursor: pointer;
+    min-width: 3vw;
+    min-height: 3vw;
+    z-index: 2; /* спрятать инпуты на задний план (дополнительная мера =) */
+    opacity: 0;
+}
+
+.slider__slide {
+    width: 68vw; /* установить ширину каждого блока слайдов относительно общей ширины всех слайдов.
+        В данном случае слайдов 4 шт., общая ширина блока со слайдами считается за 100%, 100% / 4 шт. = 25% */
+    transition: all .6s ease; /* установить время и тип перехода для анимации переключения слайдов */
+}
+.slider__slide img {
+    width: 68vw; /* установить ширину изображений слайдера */
+}
+
+.slider__text-controls-wrapper {
+    display: flex; /* расположить блок с текстом и блок с кнопками в строку */
+    justify-content: space-between; /* расположить блок с текстом и блок с кнопками по разным сторонам */
+    align-items: flex-start; /* выровнить текст и кнопки по верхнему краю блока */
+    padding-top: 2%;
+}
+
+.slider__text-slider {
+    display: flex;
+    max-width: 80%;
+    overflow: hidden;
+}
+
+.slider__text-slides {
+    display: flex;
+    width: 272vw;
+}
+
+.slider__text-slide {
+    width: 68vw;
+    transition: all .63s ease; /* установить время и тип перехода для анимации переключения слайдов */
+
+}
+
+.slider__text {
+    color: #FFFFFF;
+    min-width: 68vw;
+    font-size: 1.3em;    /* clamp(0.5rem, 0.7rem, 0.9rem); */
+    white-space: nowrap;
+    margin-top: 0.8%;
+}
+
+.slider__control-labels {
+    bottom: 6%; /* прижать блок к нижнему краю, отступив указанное количество единиц в противоположную сторону */
+    display: flex; /*  */
+    justify-content: flex-end;
+    width: 20%;
+}
+
+.slider__label-wrapper {
+    background-color: transparent;
+    width: 3vw;
+    height: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider__control-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 1vw; /* задать высоту элемента */
+    max-width: 1vw; /* задать ширину элемента */
+   /* задать отступы элементу */
+    border: 0.1vw solid #75ABFA; /* бордер */
+    cursor: pointer; /* изменить курсор мыши при наведении на элемент */
+    background-color: #75ABFA; /* установить фон элемента */
+    border-radius: 50%; /* сделать круг */
+    transition: all .4s ease; /* установить время и тип перехода для анимации при наведении курсора на элемент */
+}
+.slider__control-label:hover {
+    background-color: #FFF;
+    border-color: #FFF;
+    transform: scale(1.2);
+}
+
+/* CONTROLS */
+.slider:has(input[id="lb1"]:checked) .slide-1 {
+    margin-left: -0%; /* смещение до слайда 1 */
+}
+.slider:has(input[id="lb1"]:checked) .slide-1-txt {
+    margin-left: -0%;
+}
+.slider:has(input[id="lb1"]:checked) .label1 {
+    background-color: transparent; /* прозрачный фон для выделенной точки */
+    transform: scale(1.4);
+}
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+.slider:has(input[id="lb2"]:checked) .slide-1 {
+    margin-left: -50%; /* смещение до слайда 2 */
+}
+.slider:has(input[id="lb2"]:checked) .slide-1-txt {
+    margin-left: -25%;
+
+}
+.slider:has(input[id="lb2"]:checked) .label2 {
+    background-color: transparent; /* прозрачный фон для выделенной точки */
+    transform: scale(1.4);
+}
+
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+.slider:has(input[id="lb3"]:checked) .slide-1 {
+    margin-left: -100%; /* смещение до слайда 3 */
+}
+.slider:has(input[id="lb3"]:checked) .slide-1-txt {
+    margin-left: -50%;
+}
+.slider:has(input[id="lb3"]:checked) .label3 {
+    background-color: transparent; /* прозрачный фон для выделенной точки */
+    transform: scale(1.4);
+}
+
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+.slider:has(input[id="lb4"]:checked) .slide-1 {
+    margin-left: -150%; /* смещение до слайда 4 */
+}
+.slider:has(input[id="lb4"]:checked) .slide-1-txt {
+    margin-left: -75%;
+}
+.slider:has(input[id="lb4"]:checked) .label4 {
+    background-color: transparent; /* прозрачный фон для выделенной точки */
+    transform: scale(1.4);
+}
+/* CONTROLS [END] */
+
+
+
+/* ADAPTIVE */
+@media (max-width: 1024px) {
+    .slider__text {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 98vw;
+    }
+    .slider__inner {
+        width: 95vw;
+    }
+    .slider__slides {
+        width: 380vw;
+    }
+    .slider__slide {
+        width: 95vw;
+    }
+    .slider__slide img {
+        width: 95vw;
+    }
+    .slider__text-slider {
+        width: 95vw;
+    }
+
+    .slider__text-slides {
+        width: 380vw;
+    }
+    .slider__text-slide {
+        width: 95vw;
+    }
+    .slider__text {
+        min-width: 95vw;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 559px) {
+    .slider__text-slider {
+        width: 95vw;
+        max-width: 95vw;
+    }
+    .slider__text {
+        width: 95vw;
+        margin-top: 2%;
+        margin-bottom: 4%;
+    }
+    .slider__control-labels {
+        justify-content: center;
+        margin-top: 2%;
+        width: 100%;
+    }
+    .slider__label-wrapper {
+        width: 5vw;
+    }
+    .slider__control-label {
+        max-height: 2vw;
+        max-width: 2vw;
+        height: 2vw;
+        width: 2vw;
+    }
+    .slider__text-controls-wrapper {
+        flex-direction: column-reverse;
+        padding-top: 0;
+    }
+    .slider__text-slider {
+        width: 100%;
+
+    }
+    .slider__text {
+        min-width: 95vw;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider__text {
+        font-size: 0.8em;
+    }
+}
+/* ADAPTIVE [END] */
