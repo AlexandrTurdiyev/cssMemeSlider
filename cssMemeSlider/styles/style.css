@@ -67,7 +67,7 @@
 .slider__text {
     color: #FFFFFF;
     min-width: 68vw;
-    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-size: clamp(0.1rem, 0.2rem, 0.3rem);
     white-space: nowrap;
     margin-top: 0;
 }
